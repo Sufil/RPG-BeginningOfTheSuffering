@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace Privat_RPG
 {
-    class Enemy
+    class Eat:Attack
     {
-        int hp;
-        int lvl;
-        int probabilityOfAppearing;
-        string name;
-
-        Attack[] attacks;
+        public Eat()
+        {
+            Dmg = 1;
+            Acc = 30;
+            Name = "Essen";
+            Crit = 5;
+        }
     }
 }
