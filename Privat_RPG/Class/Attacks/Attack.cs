@@ -11,7 +11,14 @@ namespace Privat_RPG
         int dmg;
         int acc;
         string name;
+        int crit;
 
+        bool specialEffect = false;
 
+        public int Acc { get => acc; set => acc = value; }
+        public string Name { get => name; set => name = value; }
+        public bool SpecialEffect { get => specialEffect; set => specialEffect = value; }
+        public int Dmg { get => dmg; set => dmg = value; }
+        public int Crit { get => crit; set => crit = value; }
     }
 }
