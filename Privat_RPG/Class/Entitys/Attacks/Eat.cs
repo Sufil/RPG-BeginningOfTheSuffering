@@ -14,6 +14,7 @@ namespace Privat_RPG
             Acc = 30;
             Name = "Essen";
             Crit = 5;
+            Description = "ENTITY nimmt einen Bissen aus TARGET.";
         }
     }
 }

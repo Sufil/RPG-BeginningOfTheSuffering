@@ -72,11 +72,12 @@ namespace Privat_RPG
 
                 if (asshole.checkDeath())
                 {
+                    player.addExp(asshole);
                     Console.WriteLine("Enemy defeated\n");
                     break;
                 }
 
-                asshole.attack(player);
+                asshole.attack(asshole.selectAttack(), player);
 
                 Console.ReadLine();
 
@@ -89,10 +90,7 @@ namespace Privat_RPG
             // try funktion
             string input = Console.ReadLine();
 
-            Attack attack = player.Attacks[Int32.Parse(input)];
-
-            asshole.takeDamage(attack.Dmg);
-            Console.WriteLine(string.Format("{0,0} setzt {1,0} ein. {2,0} nimmt {3,0} Schaden", player.Name, attack.Name, asshole.Name, attack.Dmg));
+            player.attack(Int32.Parse(input), asshole);
         }
     }
 }

@@ -17,12 +17,16 @@ namespace Privat_RPG
         public int Lvl { get => lvl; set => lvl = value; }
         public Attack[] Attacks { get => attacks; set => attacks = value; }
 
-        public virtual void attack(Entity target)
+        public virtual void attack(int attackIndex, Entity target)
         {
-            Random random = new Random();
-            Attack selected = attacks[random.Next(0, attacks.Length)];
+            Attack selected = attacks[attackIndex];
             target.takeDamage(selected.Dmg);
-            Console.WriteLine(string.Format("{0,0} setzt {1,0} ein. {2,0} nimmt {3,0} Schaden", this.Name, selected.Name, target.Name, selected.Dmg));
+
+            string output = selected.Description;
+            output = output.Replace("ENTITY", this.Name);
+            output = output.Replace("TARGET", target.Name);
+
+            Console.WriteLine(string.Format(output + " {0,0} nimmt {1,0} Schaden", target.Name, selected.Dmg));
         }
 
         public virtual bool checkDeath()

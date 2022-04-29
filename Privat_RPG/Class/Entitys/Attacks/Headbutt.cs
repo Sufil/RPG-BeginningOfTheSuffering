@@ -14,6 +14,7 @@ namespace Privat_RPG
             Acc = 99;
             Dmg = 3;
             Crit = 20;
+            Description = "ENTITY gibt TARGET eine Kopfnuss.";
         }
     }
 }

@@ -14,6 +14,7 @@ namespace Privat_RPG
             Acc = 100;
             Name = "Schlag";
             Crit = 15;
+            Description = "ENTITY schlägt TARGET.";
         }
     }
 }

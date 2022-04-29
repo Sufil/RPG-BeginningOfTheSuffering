@@ -12,8 +12,9 @@ namespace Privat_RPG
         {
             Name = "Schwertschlag";
             Acc = 96;
-            Dmg = 5;
+            Dmg = 4;
             Crit = 5;
+            Description = "ENTITY schwingt sein langes Schwert und erzeugt bei TARGET eine tiefe Fleischwunde und enormen Schmerz.";
         }
     }
 }

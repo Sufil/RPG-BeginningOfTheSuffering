@@ -10,7 +10,7 @@ namespace Privat_RPG
     {
         public Avast()
         {
-            Hp = 100;
+            Hp = 10;
             Lvl = 1;
             Name = "Avast";
 
