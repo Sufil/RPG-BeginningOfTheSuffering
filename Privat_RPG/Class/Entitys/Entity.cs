@@ -25,9 +25,14 @@ namespace Privat_RPG
             Console.WriteLine(string.Format("{0,0} setzt {1,0} ein. {2,0} nimmt {3,0} Schaden", this.Name, selected.Name, target.Name, selected.Dmg));
         }
 
+        public virtual bool checkDeath()
+        {
+            return hp == 0;
+        }
+
         public virtual void takeDamage(int dmg)
         {
-            this.hp -= dmg; 
+            hp -= dmg; 
 
             if (hp < 0)
             {

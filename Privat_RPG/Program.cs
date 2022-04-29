@@ -70,7 +70,7 @@ namespace Privat_RPG
                 recievePlayerInput(asshole);
                 Console.ReadLine();
 
-                if (checkDeath(asshole))
+                if (asshole.checkDeath())
                 {
                     Console.WriteLine("Enemy defeated\n");
                     break;
@@ -78,7 +78,6 @@ namespace Privat_RPG
 
                 asshole.attack(player);
 
-                checkDeath(asshole);
                 Console.ReadLine();
 
             }
@@ -93,17 +92,6 @@ namespace Privat_RPG
 
             asshole.takeDamage(attack.Dmg);
             Console.WriteLine(string.Format("{0,0} setzt {1,0} ein. {2,0} nimmt {3,0} Schaden", player.Name, attack.Name, asshole.Name, attack.Dmg));
-        }
-
-        public static bool checkDeath(Enemy ass)
-        {
-            if (ass.Hp == 0 || player.Hp == 0)
-            {
-                return true;
-            }
-
-            return false;
-
         }
     }
 }
