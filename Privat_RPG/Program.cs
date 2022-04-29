@@ -53,7 +53,7 @@ namespace Privat_RPG
             Console.WriteLine(string.Format("Du bist einem {0,0} begegnet!", asshole.Name));
             while (fight)
             {
-                Console.WriteLine(string.Format("Gegner HP: {0, 1}  Gegner Lvl: {1,1}\n\n {2,0}   HP: {3,1}    Lvl: {4,1}", asshole.Hp, asshole.Lvl, player.Name, player.Hp, player.Lvl));
+                Console.WriteLine(string.Format("Gegner HP: {0, 1}  Gegner Lvl: {1,1}\n\n{2,0}   HP: {3,1}    Lvl: {4,1}", asshole.Hp, asshole.Lvl, player.Name, player.Hp, player.Lvl));
 
                 Console.WriteLine("Was wirst du tun?\n");
 
@@ -85,6 +85,7 @@ namespace Privat_RPG
         
         public static void recievePlayerInput(Enemy asshole)
         {
+
             // try funktion
             string input = Console.ReadLine();
 
