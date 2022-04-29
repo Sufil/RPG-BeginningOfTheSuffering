@@ -13,6 +13,7 @@ namespace Privat_RPG
             Hp = 10;
             Lvl = 1;
             Name = "Avast";
+            Exp = 2;
 
             Attacks = new Attack[] { new Slap(), new Headbutt() };
             ProbabilityOfAppearing = 100;

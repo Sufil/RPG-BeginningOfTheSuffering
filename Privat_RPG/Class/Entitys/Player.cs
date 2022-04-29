@@ -37,6 +37,19 @@ namespace Privat_RPG
             Console.WriteLine("Du hast ein Lvl Up erhalten! Stärke um 50% erhöht!");
         }
 
+        public override void attack(int attackIndex, Entity target)
+        {
+            Attack selected = Attacks[attackIndex];
+            double damage = selected.Dmg * Str;
+            target.takeDamage((int)damage);
+
+            string output = selected.Description;
+            output = output.Replace("ENTITY", this.Name);
+            output = output.Replace("TARGET", target.Name);
+
+            Console.WriteLine(string.Format(output + " {0,0} nimmt {1,0} Schaden", target.Name, (int)damage));
+        }
+
         public Player(string name)
         {
             Hp = 100;
