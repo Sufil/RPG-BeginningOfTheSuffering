@@ -43,5 +43,10 @@ namespace Privat_RPG
                 hp = 0;
             }
         }
+
+        public virtual void update()
+        {
+
+        }
     }
 }

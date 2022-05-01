@@ -14,9 +14,11 @@ namespace Privat_RPG
             Lvl = 1;
             Name = "Avast";
             Exp = 2;
+            DeathOutput = "Avast löst sich in Luft auf.";
 
             Attacks = new Attack[] { new Slap(), new Headbutt() };
-            ProbabilityOfAppearing = 100;
+            AmountAttacks = Attacks.Length;
+            ProbabilityOfAppearing = 10;
         }
     }
 }

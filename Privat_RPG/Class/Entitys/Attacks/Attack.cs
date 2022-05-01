@@ -12,6 +12,7 @@ namespace Privat_RPG
         int acc;
         string name;
         int crit;
+        public Random random = new Random();
 
         bool specialEffect = false;
 
@@ -23,5 +24,10 @@ namespace Privat_RPG
         public int Dmg { get => dmg; set => dmg = value; }
         public int Crit { get => crit; set => crit = value; }
         public string Description { get => description; set => description = value; }
+
+        public virtual void update()
+        {
+
+        }
     }
 }

@@ -6,7 +6,7 @@ namespace Privat_RPG
     {
         static public bool yourMama = true;
         static public bool fat = true;
-        static Type[] enemies = new Type[] { typeof(Avast) };
+        static Type[] enemies = new Type[] { typeof(Avast), typeof(Blobfish), typeof(Amogus) };
         static public Player player;
         static public bool fight;
 
@@ -30,20 +30,11 @@ namespace Privat_RPG
 
         private static void checkForEnemy()
         {
-            startFight(new Avast());
+            Random random = new Random();
 
-            /*Random random = new Random();
-
-            foreach (Type enemy in enemies)
-            {
-
-                //int prob = enemy.ProbabilityOfAppearing;
-                if (random.Next(0,101) <= prob)
-                {
-                    startFight(enemy);
-                }
-            }*/
-
+            Type enemyRace = enemies[random.Next(0, enemies.Length)];
+            Enemy enemy = (Enemy) Activator.CreateInstance(enemyRace);
+            startFight(enemy);
         }
 
 
@@ -53,7 +44,7 @@ namespace Privat_RPG
             Console.WriteLine(string.Format("Du bist einem {0,0} begegnet!", asshole.Name));
             while (fight)
             {
-                Console.WriteLine(string.Format("Gegner HP: {0, 1}  Gegner Lvl: {1,1}\n\n{2,0}   HP: {3,1}    Lvl: {4,1}", asshole.Hp, asshole.Lvl, player.Name, player.Hp, player.Lvl));
+                Console.WriteLine(string.Format("{0, 0} HP: {1, 1}   Lvl: {2,1}\n\n{3,0}   HP: {4,1}    Lvl: {5,1}", asshole.Name, asshole.Hp, asshole.Lvl, player.Name, player.Hp, player.Lvl));
 
                 Console.WriteLine("Was wirst du tun?\n");
 
@@ -72,11 +63,12 @@ namespace Privat_RPG
 
                 if (asshole.checkDeath())
                 {
+                    Console.WriteLine("\n" + asshole.DeathOutput + "\n");
                     player.addExp(asshole);
-                    Console.WriteLine("Enemy defeated\n");
                     break;
                 }
 
+                asshole.update();
                 asshole.attack(asshole.selectAttack(), player);
 
                 Console.ReadLine();

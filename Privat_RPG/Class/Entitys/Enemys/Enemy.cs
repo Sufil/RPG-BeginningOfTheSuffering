@@ -8,21 +8,23 @@ namespace Privat_RPG
 {
     class Enemy:Entity
     {
-        int probabilityOfAppearing;
+        static int probabilityOfAppearing;
         int exp;
+        string deathOutput;
 
         Attack[] possibleAttacks;
         int amountAttacks;
         Attack[] attacks;
         
-        public  int ProbabilityOfAppearing { get => probabilityOfAppearing; set => probabilityOfAppearing = value; }
-        public  int Exp { get => exp; set => exp = value; }
+        public static int ProbabilityOfAppearing { get => probabilityOfAppearing; set => probabilityOfAppearing = value; }
+        public int Exp { get => exp; set => exp = value; }
+        public int AmountAttacks { get => amountAttacks; set => amountAttacks = value; }
+        public string DeathOutput { get => deathOutput; set => deathOutput = value; }
 
         public virtual int selectAttack()
         {
             Random random = new Random();
             return random.Next(0, amountAttacks);  
-        }
-        
+        }        
     }
 }
