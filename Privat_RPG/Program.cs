@@ -1,4 +1,5 @@
 ﻿using System;
+using Pastel;
 
 namespace Privat_RPG
 {
@@ -44,7 +45,7 @@ namespace Privat_RPG
             Console.WriteLine(string.Format("Du bist einem {0,0} begegnet!", asshole.Name));
             while (fight)
             {
-                Console.WriteLine(string.Format("{0, 0} HP: {1, 1}   Lvl: {2,1}\n\n{3,0}   HP: {4,1}    Lvl: {5,1}", asshole.Name, asshole.Hp, asshole.Lvl, player.Name, player.Hp, player.Lvl));
+                Console.WriteLine(string.Format("{0, 0} HP: {1, 1}   Lvl: {2,1}\n\n{3,0}   HP: {4,1}    Lvl: {5,1}", asshole.Name.Pastel("#5555ff"), asshole.Hp.ToString().Pastel("#ff5555"), asshole.Lvl.ToString().Pastel("#55ff55"), player.Name.Pastel("#5555ff"), player.Hp.ToString().Pastel("#ff5555"), player.Lvl.ToString().Pastel("#55ff55")));
 
                 Console.WriteLine("Was wirst du tun?\n");
 
@@ -53,7 +54,7 @@ namespace Privat_RPG
                 foreach (Attack attack in player.Attacks)
                 {
                     int i = Array.IndexOf(player.Attacks, attack);
-                    attackString += string.Format("{0,0}: {1,0}\n", i, attack.Name);
+                    attackString += string.Format("{0,0}: {1,0}\n", i.ToString().Pastel("#55ff55"), attack.Name.Pastel("#55ffff"));
                 }
 
                 Console.WriteLine(attackString);
