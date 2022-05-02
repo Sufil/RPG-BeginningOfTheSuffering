@@ -80,10 +80,14 @@ namespace Privat_RPG
         public static void recievePlayerInput(Enemy asshole)
         {
 
-            // try funktion
-            string input = Console.ReadLine();
-
-            player.attack(Int32.Parse(input), asshole);
+            try
+            {
+                string input = Console.ReadLine();
+                player.attack(Int32.Parse(input), asshole);
+            }
+            catch (Exception e) {
+                recievePlayerInput(asshole);
+            }
         }
     }
 }
