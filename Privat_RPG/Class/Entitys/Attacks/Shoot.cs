@@ -10,8 +10,8 @@ namespace Privat_RPG
     {
         public Shoot()
         {
-            Dmg = 10;
-            Acc = 30;
+            DmgMAX = 15;
+            DmgMIN = 10;
             Name = "Schuss";
             Crit = 5;
             Description = "ENTITY zieht eine Waffe und schießt auf TARGET.";

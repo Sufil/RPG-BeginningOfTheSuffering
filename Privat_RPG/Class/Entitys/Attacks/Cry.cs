@@ -12,7 +12,8 @@ namespace Privat_RPG
         {
             Name = "Weinen";
             Acc = 99;
-            Dmg = 3;
+            DmgMAX = 3;
+            DmgMIN = 2;
             Crit = 20;
             Description = "ENTITY beginnt ohne Grund zu weinen. Das Salz schadet TARGETs weicher Haut.";
         }

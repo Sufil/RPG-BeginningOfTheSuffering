@@ -16,7 +16,8 @@ namespace Privat_RPG
 
         public ExistentialDread()
         {
-            Dmg = 1;
+            DmgMAX = 3;
+            DmgMIN = 0;
             Acc = 100;
             Name = "Existential Dread";
             Crit = 5;

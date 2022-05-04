@@ -20,13 +20,14 @@ namespace Privat_RPG
         public virtual void attack(int attackIndex, Entity target)
         {
             Attack selected = attacks[attackIndex];
-            target.takeDamage(selected.Dmg);
+            int dmg = selected.getDamage();
+            target.takeDamage(dmg);
 
             string output = selected.Description;
             output = output.Replace("ENTITY", this.Name);
             output = output.Replace("TARGET", target.Name);
 
-            Console.WriteLine(string.Format(output + " {0,0} nimmt {1,0} Schaden", target.Name, selected.Dmg));
+            Console.WriteLine(string.Format(output + " {0,0} nimmt {1,0} Schaden", target.Name, dmg));
         }
 
         public virtual bool checkDeath()

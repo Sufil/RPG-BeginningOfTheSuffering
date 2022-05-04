@@ -10,7 +10,8 @@ namespace Privat_RPG
     {
         public Eat()
         {
-            Dmg = 1;
+            DmgMAX = 1;
+            DmgMIN = 0;
             Acc = 30;
             Name = "Essen";
             Crit = 5;

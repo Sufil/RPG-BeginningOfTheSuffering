@@ -10,7 +10,8 @@ namespace Privat_RPG
     {
         public Slap()
         {
-            Dmg = 2;
+            DmgMAX = 2;
+            DmgMIN = 0;
             Acc = 100;
             Name = "Schlag";
             Crit = 15;

@@ -10,7 +10,8 @@ namespace Privat_RPG
     {
         public Sus()
         {
-            Dmg = 2;
+            DmgMAX = 2;
+            DmgMIN = 0;
             Acc = 30;
             Name = "Sus";
             Crit = 5;

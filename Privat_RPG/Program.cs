@@ -59,7 +59,7 @@ namespace Privat_RPG
 
                 Console.WriteLine(attackString + "\n");
 
-                recievePlayerInput(asshole);
+                receivePlayerInput(asshole);
                 Console.ReadLine();
 
                 if (asshole.checkDeath())
@@ -77,7 +77,7 @@ namespace Privat_RPG
             }
         }
         
-        public static void recievePlayerInput(Enemy asshole)
+        public static void receivePlayerInput(Enemy asshole)
         {
 
             try
@@ -86,7 +86,7 @@ namespace Privat_RPG
                 player.attack(Int32.Parse(input), asshole);
             }
             catch (Exception e) {
-                recievePlayerInput(asshole);
+                receivePlayerInput(asshole);
             }
         }
     }

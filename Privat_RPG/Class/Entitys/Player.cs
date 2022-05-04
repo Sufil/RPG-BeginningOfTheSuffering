@@ -40,14 +40,15 @@ namespace Privat_RPG
         public override void attack(int attackIndex, Entity target)
         {
             Attack selected = Attacks[attackIndex];
-            double damage = selected.Dmg * Str;
-            target.takeDamage((int)damage);
+            int dmg = selected.getDamage();
+            double damage = dmg * Str;
+            target.takeDamage(dmg);
 
             string output = selected.Description;
             output = output.Replace("ENTITY", this.Name);
             output = output.Replace("TARGET", target.Name);
 
-            Console.WriteLine(string.Format(output + " {0,0} nimmt {1,0} Schaden", target.Name, (int)damage));
+            Console.WriteLine(string.Format(output + " {0,0} nimmt {1,0} Schaden", target.Name, damage));
         }
 
         public Player(string name)

@@ -8,7 +8,8 @@ namespace Privat_RPG
 {
     class Attack
     {
-        int dmg;
+        int dmgMAX;
+        int dmgMIN;
         int acc;
         string name;
         int crit;
@@ -21,11 +22,28 @@ namespace Privat_RPG
         public int Acc { get => acc; set => acc = value; }
         public string Name { get => name; set => name = value; }
         public bool SpecialEffect { get => specialEffect; set => specialEffect = value; }
-        public int Dmg { get => dmg; set => dmg = value; }
+        public int DmgMAX { get => dmgMAX; set => dmgMAX = value; }
+        public int DmgMIN { get => dmgMIN; set => dmgMIN = value; }
         public int Crit { get => crit; set => crit = value; }
         public string Description { get => description; set => description = value; }
 
+        public virtual int getDamage()
+        {
+            int dmg = random.Next(dmgMIN, dmgMAX + 1);
+            //Description = getDescription(dmg);    -Funktioniert noch nicht-
+            return dmg;
+        }
+
+        public virtual string getDescription(int dmg)
+        {
+            return "";
+        }
         public virtual void update()
+        {
+
+        }
+
+        public virtual void updateAttack()
         {
 
         }

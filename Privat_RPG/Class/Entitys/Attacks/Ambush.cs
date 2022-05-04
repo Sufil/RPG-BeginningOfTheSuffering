@@ -10,7 +10,8 @@ namespace Privat_RPG
     {
         public Ambush()
         {
-            Dmg = 20;
+            DmgMAX = 20;
+            DmgMIN = 12;
             Acc = 30;
             Name = "Hinterhalt";
             Crit = 5;

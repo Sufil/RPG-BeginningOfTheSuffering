@@ -12,7 +12,8 @@ namespace Privat_RPG
         {
             Name = "Kopfnuss";
             Acc = 99;
-            Dmg = 3;
+            DmgMAX = 3;
+            DmgMIN = 2;
             Crit = 20;
             Description = "ENTITY gibt TARGET eine Kopfnuss.";
         }
