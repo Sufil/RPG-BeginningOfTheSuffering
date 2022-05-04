@@ -8,6 +8,12 @@ namespace Privat_RPG
 {
     class Avast:Enemy
     {
+
+        public override string appears()
+        {
+            return "Ein wütendes Avast taucht vor dir auf!";
+        }
+
         public Avast()
         {
             Hp = 10;

@@ -16,6 +16,13 @@ namespace Privat_RPG
             }
         }
 
+        public override string appears()
+        {
+            string[] text = new string[] {"Du trittst aus Versehen auf einen wilden Blobfisch!", "Ein Blobfisch berührt mit seiner Depression deine Aura. Zum Angriff!", "Ein Blobfisch will, dass du sein Leiden beendest!", "\"Biiiitte töte mich!\" Das würde dieser Blobfisch sagen, wenn er sprechen könnte. Erfülle seinen letzten Wunsch!"};
+            Random random = new Random();
+            return text[random.Next(0, text.Length)];
+        }
+
         public Blobfish()
         {
             Hp = 30;

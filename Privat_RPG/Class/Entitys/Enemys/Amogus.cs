@@ -8,6 +8,12 @@ namespace Privat_RPG
 {
     class Amogus:Enemy
     {
+
+        public override string appears()
+        {
+            return "Du hörst ein suspektes Geräusch hinter dir. Du drehst dich um, vor dir ein Eumel. Kämpft!";
+        }
+
         public Amogus()
         {
             Hp = 12;

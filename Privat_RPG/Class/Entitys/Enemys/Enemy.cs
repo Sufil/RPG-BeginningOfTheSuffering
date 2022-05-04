@@ -21,6 +21,11 @@ namespace Privat_RPG
         public int AmountAttacks { get => amountAttacks; set => amountAttacks = value; }
         public string DeathOutput { get => deathOutput; set => deathOutput = value; }
 
+        public virtual string appears()
+        {
+            return "";
+        }
+
         public virtual int selectAttack()
         {
             Random random = new Random();

@@ -17,7 +17,7 @@ namespace Privat_RPG
             {
                 if (player == null)
                 {
-                    Console.WriteLine("Bitte gib deinen Namen ein:");
+                    Console.WriteLine("Bitte gib deinen Namen ein:\n");
                     string name= Console.ReadLine();
                     player = new Player(name);
                 }
@@ -42,12 +42,12 @@ namespace Privat_RPG
         private static void startFight(Enemy asshole)
         {
             fight = true;
-            Console.WriteLine(asshole.appears());
+            Console.WriteLine("\n" + asshole.appears());
             while (fight)
             {
-                Console.WriteLine(string.Format("{0, 0} HP: {1, 1}   Lvl: {2,1}\n\n{3,0}   HP: {4,1}    Lvl: {5,1}", asshole.Name.Pastel("#ff5555"), asshole.Hp.ToString().Pastel("#ff5555"), asshole.Lvl.ToString().Pastel("#ff5555"), player.Name.Pastel("#9988ff"), player.Hp.ToString().Pastel("#9988ff"), player.Lvl.ToString().Pastel("#9988ff")));
+                Console.WriteLine(string.Format("\n{0, 0} HP: {1, 1}   Lvl: {2,1}\n\n{3,0}   HP: {4,1}    Lvl: {5,1}", asshole.Name.Pastel("#ff5555"), asshole.Hp.ToString().Pastel("#ff5555"), asshole.Lvl.ToString().Pastel("#ff5555"), player.Name.Pastel("#9988ff"), player.Hp.ToString().Pastel("#9988ff"), player.Lvl.ToString().Pastel("#9988ff")));
 
-                Console.WriteLine("Was wirst du tun?\n");
+                Console.WriteLine("\nWas wirst du tun?\n");
 
                 string attackString = "";
 
@@ -57,7 +57,7 @@ namespace Privat_RPG
                     attackString += string.Format("{0,0}: {1,0}\n", i.ToString().Pastel("#55ff55"), attack.Name.Pastel("#55ffff"));
                 }
 
-                Console.WriteLine(attackString);
+                Console.WriteLine(attackString + "\n");
 
                 recievePlayerInput(asshole);
                 Console.ReadLine();
