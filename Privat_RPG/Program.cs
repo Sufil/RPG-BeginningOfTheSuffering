@@ -39,13 +39,13 @@ namespace Privat_RPG
         }
 
 
-        private static void startFight(Enemy asshole)
+        private static void startFight(Enemy enemy)
         {
             fight = true;
-            Console.WriteLine("\n" + asshole.appears());
+            Console.WriteLine("\n" + enemy.appears());
             while (fight)
             {
-                Console.WriteLine(string.Format("\n{0, 0} HP: {1, 1}   Lvl: {2,1}\n\n{3,0}   HP: {4,1}    Lvl: {5,1}", asshole.Name.Pastel("#ff5555"), asshole.Hp.ToString().Pastel("#ff5555"), asshole.Lvl.ToString().Pastel("#ff5555"), player.Name.Pastel("#9988ff"), player.Hp.ToString().Pastel("#9988ff"), player.Lvl.ToString().Pastel("#9988ff")));
+                Console.WriteLine(string.Format("\n{0, 0} HP: {1, 1}   Lvl: {2,1}\n\n{3,0}   HP: {4,1}    Lvl: {5,1}", enemy.Name.Pastel("#ff5555"), enemy.Hp.ToString().Pastel("#ff5555"), enemy.Lvl.ToString().Pastel("#ff5555"), player.Name.Pastel("#9988ff"), player.Hp.ToString().Pastel("#9988ff"), player.Lvl.ToString().Pastel("#9988ff")));
 
                 Console.WriteLine("\nWas wirst du tun?\n");
 
@@ -59,34 +59,34 @@ namespace Privat_RPG
 
                 Console.WriteLine(attackString + "\n");
 
-                receivePlayerInput(asshole);
+                receivePlayerInput(enemy);
                 Console.ReadLine();
 
-                if (asshole.checkDeath())
+                if (enemy.checkDeath())
                 {
-                    Console.WriteLine("\n" + asshole.DeathOutput + "\n");
-                    player.addExp(asshole);
+                    Console.WriteLine("\n" + enemy.DeathOutput + "\n");
+                    player.addExp(enemy);
                     break;
                 }
 
-                asshole.update();
-                asshole.attack(asshole.selectAttack(), player);
+                enemy.update();
+                enemy.attack(enemy.selectAttack(), player);
 
                 Console.ReadLine();
 
             }
         }
         
-        public static void receivePlayerInput(Enemy asshole)
+        public static void receivePlayerInput(Enemy enemy)
         {
 
             try
             {
                 string input = Console.ReadLine();
-                player.attack(Int32.Parse(input), asshole);
+                player.attack(Int32.Parse(input), enemy);
             }
             catch (Exception e) {
-                receivePlayerInput(asshole);
+                receivePlayerInput(enemy);
             }
         }
     }
