@@ -24,7 +24,6 @@ namespace Privat_RPG
 
                 checkForEnemy();
 
-                Console.ReadLine();
             }
 
         }
@@ -60,7 +59,7 @@ namespace Privat_RPG
                 Console.WriteLine(attackString + "\n");
 
                 receivePlayerInput(enemy);
-                Console.ReadLine();
+                
 
                 if (enemy.checkDeath())
                 {
@@ -72,7 +71,7 @@ namespace Privat_RPG
                 enemy.update();
                 enemy.attack(enemy.selectAttack(), player);
 
-                Console.ReadLine();
+                
 
             }
         }
